@@ -8,11 +8,25 @@
 
 #import "AppDelegate.h"
 
+@interface AppDelegate ()
+
+@end
+
 @implementation AppDelegate
+
++ (void)initialize
+{
+  
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-  // Insert code here to initialize your application
+  [_window makeKeyAndOrderFront:self];
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)notification
+{
+  [_window makeKeyAndOrderFront:self];
 }
 
 @end

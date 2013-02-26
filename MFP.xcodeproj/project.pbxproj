@@ -14,6 +14,10 @@
 		BB87A30816DCBB920086CA0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87A30716DCBB920086CA0C /* AppDelegate.m */; };
 		BB87A30B16DCBB920086CA0C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB87A30916DCBB920086CA0C /* MainMenu.xib */; };
 		BB87A31416DCBF220086CA0C /* MFP.icns in Resources */ = {isa = PBXBuildFile; fileRef = BB87A31316DCBF220086CA0C /* MFP.icns */; };
+		BB87A31A16DCC6AB0086CA0C /* MFPPlaybackCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87A31916DCC6AB0086CA0C /* MFPPlaybackCoverView.m */; };
+		BB87A31D16DCCFF20086CA0C /* PubSub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB87A31C16DCCFF20086CA0C /* PubSub.framework */; };
+		BB87A32316DCD6E90086CA0C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87A32216DCD6E90086CA0C /* Constants.m */; };
+		BB87A32916DCE2EC0086CA0C /* MFPPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87A32816DCE2EC0086CA0C /* MFPPlayback.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,13 @@
 		BB87A30716DCBB920086CA0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BB87A30A16DCBB920086CA0C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BB87A31316DCBF220086CA0C /* MFP.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MFP.icns; sourceTree = SOURCE_ROOT; };
+		BB87A31816DCC6AB0086CA0C /* MFPPlaybackCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPPlaybackCoverView.h; sourceTree = "<group>"; };
+		BB87A31916DCC6AB0086CA0C /* MFPPlaybackCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFPPlaybackCoverView.m; sourceTree = "<group>"; };
+		BB87A31C16DCCFF20086CA0C /* PubSub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PubSub.framework; path = System/Library/Frameworks/PubSub.framework; sourceTree = SDKROOT; };
+		BB87A32116DCD6E90086CA0C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		BB87A32216DCD6E90086CA0C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		BB87A32716DCE2EC0086CA0C /* MFPPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPPlayback.h; sourceTree = "<group>"; };
+		BB87A32816DCE2EC0086CA0C /* MFPPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFPPlayback.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB87A31D16DCCFF20086CA0C /* PubSub.framework in Frameworks */,
 				BB87A2F516DCBB920086CA0C /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +77,7 @@
 		BB87A2F316DCBB920086CA0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB87A31C16DCCFF20086CA0C /* PubSub.framework */,
 				BB87A2F416DCBB920086CA0C /* Cocoa.framework */,
 				BB87A2F616DCBB920086CA0C /* Other Frameworks */,
 			);
@@ -86,7 +99,11 @@
 			children = (
 				BB87A30616DCBB920086CA0C /* AppDelegate.h */,
 				BB87A30716DCBB920086CA0C /* AppDelegate.m */,
-				BB87A30916DCBB920086CA0C /* MainMenu.xib */,
+				BB87A32716DCE2EC0086CA0C /* MFPPlayback.h */,
+				BB87A32816DCE2EC0086CA0C /* MFPPlayback.m */,
+				BB87A32116DCD6E90086CA0C /* Constants.h */,
+				BB87A32216DCD6E90086CA0C /* Constants.m */,
+				BB87A31B16DCC6B70086CA0C /* UI */,
 				BB87A2FB16DCBB920086CA0C /* Supporting Files */,
 			);
 			path = MFP;
@@ -103,6 +120,16 @@
 				BB87A30316DCBB920086CA0C /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB87A31B16DCC6B70086CA0C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BB87A30916DCBB920086CA0C /* MainMenu.xib */,
+				BB87A31816DCC6AB0086CA0C /* MFPPlaybackCoverView.h */,
+				BB87A31916DCC6AB0086CA0C /* MFPPlaybackCoverView.m */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +199,9 @@
 			files = (
 				BB87A30116DCBB920086CA0C /* main.m in Sources */,
 				BB87A30816DCBB920086CA0C /* AppDelegate.m in Sources */,
+				BB87A31A16DCC6AB0086CA0C /* MFPPlaybackCoverView.m in Sources */,
+				BB87A32316DCD6E90086CA0C /* Constants.m in Sources */,
+				BB87A32916DCE2EC0086CA0C /* MFPPlayback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +301,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MFP/MFP-Prefix.pch";
 				INFOPLIST_FILE = "MFP/MFP-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -284,7 +314,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MFP/MFP-Prefix.pch";
 				INFOPLIST_FILE = "MFP/MFP-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -309,6 +339,7 @@
 				BB87A31016DCBB920086CA0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
