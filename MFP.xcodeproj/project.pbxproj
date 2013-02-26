@@ -13,6 +13,7 @@
 		BB87A30516DCBB920086CA0C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BB87A30316DCBB920086CA0C /* Credits.rtf */; };
 		BB87A30816DCBB920086CA0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87A30716DCBB920086CA0C /* AppDelegate.m */; };
 		BB87A30B16DCBB920086CA0C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB87A30916DCBB920086CA0C /* MainMenu.xib */; };
+		BB87A31416DCBF220086CA0C /* MFP.icns in Resources */ = {isa = PBXBuildFile; fileRef = BB87A31316DCBF220086CA0C /* MFP.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		BB87A30616DCBB920086CA0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB87A30716DCBB920086CA0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BB87A30A16DCBB920086CA0C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BB87A31316DCBF220086CA0C /* MFP.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MFP.icns; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				BB87A2FD16DCBB920086CA0C /* InfoPlist.strings */,
 				BB87A30016DCBB920086CA0C /* main.m */,
 				BB87A30216DCBB920086CA0C /* MFP-Prefix.pch */,
+				BB87A31316DCBF220086CA0C /* MFP.icns */,
 				BB87A30316DCBB920086CA0C /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -156,6 +159,7 @@
 				BB87A2FF16DCBB920086CA0C /* InfoPlist.strings in Resources */,
 				BB87A30516DCBB920086CA0C /* Credits.rtf in Resources */,
 				BB87A30B16DCBB920086CA0C /* MainMenu.xib in Resources */,
+				BB87A31416DCBF220086CA0C /* MFP.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +271,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MFP/MFP-Prefix.pch";
 				INFOPLIST_FILE = "MFP/MFP-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -279,6 +284,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MFP/MFP-Prefix.pch";
 				INFOPLIST_FILE = "MFP/MFP-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
