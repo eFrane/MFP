@@ -48,11 +48,11 @@
 {
   if ([_available count] == 0 && !_delayedPlaybackBegin)
   {
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Unfortunately, there is not yet anything playable available. You may still lean back though, because playback will begin automatically."
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Unfortunately, there is not yet anything playable available."
                                      defaultButton:@"OK"
                                    alternateButton:nil
                                        otherButton:nil
-                         informativeTextWithFormat:@""];
+                         informativeTextWithFormat:@"You may still lean back though, because playback will begin automatically."];
     [alert setAlertStyle:NSInformationalAlertStyle];
     [alert runModal];
     _delayedPlaybackBegin = YES;
@@ -69,6 +69,7 @@
   if (!_currentlyPlaying)
   {
     [self setTitle:nil];
+    [_currentTitleMenuItem setTitle:@"Paused"];
     if (_player) [_player pause];
   } else
   {
@@ -76,26 +77,42 @@
     if (_asset)
     {
       NSArray *titleArray = [AVMetadataItem metadataItemsFromArray:[_asset metadataForFormat:@"org.id3"] withKey:AVMetadataID3MetadataKeyTitleDescription keySpace:@"org.id3"];
-      [self setTitle:[[titleArray objectAtIndex:0] value]];
+      
+      NSString *title = [[titleArray objectAtIndex:0] value];
+      [self setTitle:title];
+      [_currentTitleMenuItem setTitle:title];
     }
   }
 }
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
-  [self playNext];
+  [self performSelector:@selector(playNext) withObject:nil afterDelay:0.5];
 }
 
 - (void)playNext
 {
   NSUInteger idx;
   
-  while (idx == _currentIdx)
-    idx = (NSUInteger)(random() % [_available count]);
+  if ([_available count] > 1)
+  {
+    while (idx == _currentIdx)
+      idx = (NSUInteger)(random() % [_available count]);
+  } else
+  {
+    idx = 0;
+  }
+  _currentIdx = idx;
   
   NSError *error = nil;
   
   NSURL *audioURL = [NSURL fileURLWithPath:[_available objectAtIndex:idx]];
+  if (!audioURL)
+  {
+    NSLog(@"Something went wrong while loading %@", [_available objectAtIndex:idx]);
+    return;
+  }
+  
   _player = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:&error];
   if (error)
   {
@@ -127,9 +144,13 @@
   NSString *availableFilename = [[[NSFileManager defaultManager] applicationSupportDirectory] stringByAppendingPathComponent:@"available.txt"];
   NSString *available = [NSString stringWithContentsOfFile:availableFilename encoding:NSUTF8StringEncoding error:NULL];
   
-  _available = [available componentsSeparatedByString:@"\n"];
+  NSMutableArray *availableArray = [NSMutableArray arrayWithArray:[available componentsSeparatedByString:@"\n"]];
+  [availableArray removeLastObject];
   
-  if (_delayedPlaybackBegin) [self changePlayState:self];
+  _available = availableArray;
+  
+  if (_delayedPlaybackBegin)
+    [self performSelector:@selector(changePlayState:) withObject:self afterDelay:2.0];
 }
 
 - (void)reload:(NSNotification *)aNotification

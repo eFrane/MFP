@@ -13,6 +13,7 @@
 @interface MFPPlayback : NSObject
 
 @property (readwrite, assign) IBOutlet NSMenuItem *playStateMenuItem;
+@property (readwrite, assign) IBOutlet NSMenuItem *currentTitleMenuItem;
 
 @property (readwrite, assign) IBOutlet NSWindow             *playbackWindow;
 @property (readwrite, assign) IBOutlet MFPPlaybackCoverView *playbackCoverView;

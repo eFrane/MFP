@@ -263,6 +263,7 @@
 							<string key="NSFrame">{{17, 0}, {222, 17}}</string>
 							<reference key="NSSuperview" ref="465896653"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="682212169">
@@ -451,46 +452,6 @@
 					<int key="connectionID">592</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">title: self.title</string>
-						<reference key="source" ref="1063455688"/>
-						<reference key="destination" ref="85832911"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1063455688"/>
-							<reference key="NSDestination" ref="85832911"/>
-							<string key="NSLabel">title: self.title</string>
-							<string key="NSBinding">title</string>
-							<string key="NSKeyPath">self.title</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSNullPlaceholder</string>
-								<string key="NS.object.0">Paused</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">595</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: self.title</string>
-						<reference key="source" ref="1063455688"/>
-						<reference key="destination" ref="85832911"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1063455688"/>
-							<reference key="NSDestination" ref="85832911"/>
-							<string key="NSLabel">enabled: self.title</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">self.title</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSNullPlaceholder"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">598</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">changePlayState:</string>
 						<reference key="source" ref="85832911"/>
@@ -529,6 +490,14 @@
 						<reference key="destination" ref="881779553"/>
 					</object>
 					<int key="connectionID">606</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">currentTitleMenuItem</string>
+						<reference key="source" ref="85832911"/>
+						<reference key="destination" ref="1063455688"/>
+					</object>
+					<int key="connectionID">611</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1013,7 +982,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">606</int>
+			<int key="maxID">611</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1051,11 +1020,16 @@
 						</object>
 					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="currentTitleMenuItem">NSMenuItem</string>
 						<string key="playStateMenuItem">NSMenuItem</string>
 						<string key="playbackCoverView">MFPPlaybackCoverView</string>
 						<string key="playbackWindow">NSWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="currentTitleMenuItem">
+							<string key="name">currentTitleMenuItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="playStateMenuItem">
 							<string key="name">playStateMenuItem</string>
 							<string key="candidateClassName">NSMenuItem</string>
