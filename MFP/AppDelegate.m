@@ -7,21 +7,29 @@
 //
 
 #import "AppDelegate.h"
+#import "ItemLoader.h"
 
 @interface AppDelegate ()
-
+{
+  ItemLoader *_loader;
+}
 @end
 
 @implementation AppDelegate
 
 + (void)initialize
 {
-  
+  [[NSUserDefaults standardUserDefaults] registerDefaults:
+   [NSDictionary dictionaryWithObjectsAndKeys:
+    [NSNumber numberWithBool:NO], MFPBeginPlayingOnApplicationStartKey,
+    nil, MFPLastFeedUpdateKey,
+    nil]];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
   [_window makeKeyAndOrderFront:self];
+  _loader = [[ItemLoader alloc] init];
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification

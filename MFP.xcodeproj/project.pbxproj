@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB817EB316DD3CAA005AC61D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB817EB216DD3CAA005AC61D /* AVFoundation.framework */; };
 		BB87A2F516DCBB920086CA0C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB87A2F416DCBB920086CA0C /* Cocoa.framework */; };
 		BB87A2FF16DCBB920086CA0C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB87A2FD16DCBB920086CA0C /* InfoPlist.strings */; };
 		BB87A30116DCBB920086CA0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87A30016DCBB920086CA0C /* main.m */; };
@@ -18,9 +19,12 @@
 		BB87A31D16DCCFF20086CA0C /* PubSub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB87A31C16DCCFF20086CA0C /* PubSub.framework */; };
 		BB87A32316DCD6E90086CA0C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87A32216DCD6E90086CA0C /* Constants.m */; };
 		BB87A32916DCE2EC0086CA0C /* MFPPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87A32816DCE2EC0086CA0C /* MFPPlayback.m */; };
+		BB87A32C16DCFD4C0086CA0C /* ItemLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87A32B16DCFD4C0086CA0C /* ItemLoader.m */; };
+		BB87A32F16DD00C70086CA0C /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = BB87A32E16DD00C70086CA0C /* NSFileManager+DirectoryLocations.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB817EB216DD3CAA005AC61D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BB87A2F116DCBB920086CA0C /* MFP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MFP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB87A2F416DCBB920086CA0C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BB87A2F716DCBB920086CA0C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -42,6 +46,10 @@
 		BB87A32216DCD6E90086CA0C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		BB87A32716DCE2EC0086CA0C /* MFPPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPPlayback.h; sourceTree = "<group>"; };
 		BB87A32816DCE2EC0086CA0C /* MFPPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFPPlayback.m; sourceTree = "<group>"; };
+		BB87A32A16DCFD4C0086CA0C /* ItemLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemLoader.h; sourceTree = "<group>"; };
+		BB87A32B16DCFD4C0086CA0C /* ItemLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemLoader.m; sourceTree = "<group>"; };
+		BB87A32D16DD00C70086CA0C /* NSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
+		BB87A32E16DD00C70086CA0C /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB817EB316DD3CAA005AC61D /* AVFoundation.framework in Frameworks */,
 				BB87A31D16DCCFF20086CA0C /* PubSub.framework in Frameworks */,
 				BB87A2F516DCBB920086CA0C /* Cocoa.framework in Frameworks */,
 			);
@@ -77,6 +86,7 @@
 		BB87A2F316DCBB920086CA0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB817EB216DD3CAA005AC61D /* AVFoundation.framework */,
 				BB87A31C16DCCFF20086CA0C /* PubSub.framework */,
 				BB87A2F416DCBB920086CA0C /* Cocoa.framework */,
 				BB87A2F616DCBB920086CA0C /* Other Frameworks */,
@@ -101,10 +111,13 @@
 				BB87A30716DCBB920086CA0C /* AppDelegate.m */,
 				BB87A32716DCE2EC0086CA0C /* MFPPlayback.h */,
 				BB87A32816DCE2EC0086CA0C /* MFPPlayback.m */,
+				BB87A32A16DCFD4C0086CA0C /* ItemLoader.h */,
+				BB87A32B16DCFD4C0086CA0C /* ItemLoader.m */,
 				BB87A32116DCD6E90086CA0C /* Constants.h */,
 				BB87A32216DCD6E90086CA0C /* Constants.m */,
 				BB87A31B16DCC6B70086CA0C /* UI */,
 				BB87A2FB16DCBB920086CA0C /* Supporting Files */,
+				BB87A33016DD00F30086CA0C /* Vendor */,
 			);
 			path = MFP;
 			sourceTree = "<group>";
@@ -130,6 +143,15 @@
 				BB87A31916DCC6AB0086CA0C /* MFPPlaybackCoverView.m */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		BB87A33016DD00F30086CA0C /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				BB87A32D16DD00C70086CA0C /* NSFileManager+DirectoryLocations.h */,
+				BB87A32E16DD00C70086CA0C /* NSFileManager+DirectoryLocations.m */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +224,8 @@
 				BB87A31A16DCC6AB0086CA0C /* MFPPlaybackCoverView.m in Sources */,
 				BB87A32316DCD6E90086CA0C /* Constants.m in Sources */,
 				BB87A32916DCE2EC0086CA0C /* MFPPlayback.m in Sources */,
+				BB87A32C16DCFD4C0086CA0C /* ItemLoader.m in Sources */,
+				BB87A32F16DD00C70086CA0C /* NSFileManager+DirectoryLocations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,11 +31,6 @@
   return self;
 }
 
--(void)dealloc
-{
-  //  [self removeObserver:self forKeyPath:@"currentlyPlaying"];
-}
-
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
                         change:(NSDictionary *)change context:(void *)context
 {
@@ -72,9 +67,13 @@
 -(void)mouseDown:(NSEvent *)theEvent
 {
   _clicked = YES;
-  [self setCurrentlyPlaying:!_currentlyPlaying];
   [self setNeedsDisplay:YES];
   [self performSelector:@selector(resetColor) withObject:nil afterDelay:0.15];
+  
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+  [[self target] performSelector:[self action] withObject:self];
+  #pragma clang diagnostic pop
 }
 
 -(void)drawRect:(NSRect)dirtyRect

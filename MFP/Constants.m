@@ -8,9 +8,12 @@
 
 #import "Constants.h"
 
-NSString *MFPToggleWindowTitleNotification = @"MFPToggleWindowTitleNotification";
+NSString *MFPBeginPlayingOnApplicationStartKey = @"MFPBeginPlayingOnApplicationStart";
+NSString *MFPLastFeedUpdateKey = @"MFPLastFeedUpdate";
 
-NSString *MFPBeginPlayingOnApplicationStartKey = @"MFPBeginPlayingOnApplicationStartKey";
+NSString *MFPNewTitleAvailableNotification = @"MFPNewTitleAvailableNotification";
+
+NSString *kMFPFeedURL = @"http://musicforprogramming.net/rss.php";
 
 @implementation Constants
 

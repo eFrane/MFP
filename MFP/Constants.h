@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *MFPToggleWindowTitleNotification;
-
 extern NSString *MFPBeginPlayingOnApplicationStartKey;
+extern NSString *MFPLastFeedUpdateKey;
+
+extern NSString *MFPNewTitleAvailableNotification;
+
+extern NSString *kMFPFeedURL;
 
 @interface Constants : NSObject
 
