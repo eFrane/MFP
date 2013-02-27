@@ -81,7 +81,8 @@
     if (_player) [_player pause];
   } else
   {
-    if (!_player) [self playNext];
+    (!_player) ? [self playNext] : [_player play];
+    
     if (_asset)
     {
       NSArray *titleArray = [AVMetadataItem metadataItemsFromArray:[_asset metadataForFormat:@"org.id3"] withKey:AVMetadataID3MetadataKeyTitleDescription keySpace:@"org.id3"];
