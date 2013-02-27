@@ -40,6 +40,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reload:)
                                                  name:MFPNewTitleAvailableNotification object:nil];
+    [_currentTitleMenuItem setTitle:@"Paused"];
   }
   return self;
 }
@@ -63,6 +64,8 @@
     _delayedPlaybackBegin = YES;
     return;
   }
+  
+  if (_delayedPlaybackBegin) return;
   
   [self setCurrentlyPlaying:!_currentlyPlaying];
   
@@ -156,8 +159,8 @@
   
   if (_delayedPlaybackBegin)
   {
-    [self performSelector:@selector(changePlayState:) withObject:self afterDelay:2.0];
     _delayedPlaybackBegin = NO;
+    [self performSelector:@selector(changePlayState:) withObject:self afterDelay:2.0];
   }
 }
 
