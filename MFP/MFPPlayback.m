@@ -55,6 +55,11 @@
                          informativeTextWithFormat:@"You may still lean back though, because playback will begin automatically."];
     [alert setAlertStyle:NSInformationalAlertStyle];
     [alert runModal];
+    
+    [_playStateMenuItem setTitle:@"Playback queued"];
+    [_playbackWindow setTitle:@"Playback queued"];
+    [self setTitle:@"Playback queued"];
+    
     _delayedPlaybackBegin = YES;
     return;
   }
@@ -150,7 +155,10 @@
   _available = availableArray;
   
   if (_delayedPlaybackBegin)
+  {
     [self performSelector:@selector(changePlayState:) withObject:self afterDelay:2.0];
+    _delayedPlaybackBegin = NO;
+  }
 }
 
 - (void)reload:(NSNotification *)aNotification
